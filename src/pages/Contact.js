@@ -1,13 +1,13 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import "./Contact.css"
 import { useStateValue } from "../StateProvider";
-import { auth,db} from "../firebase";
+import {db} from "../firebase";
 
 
 function Profile() {
   
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   const [contact,setContact]=useState("");
   const [email,setEmail]=useState("");
   const [favourites,setFavourites]=useState("");

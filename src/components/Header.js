@@ -12,21 +12,14 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
 } from "reactstrap";
 import SearchIcon from "@material-ui/icons/Search";
 
 const Example = (props) => {
-  
   const [isOpen, setIsOpen] = useState(false);
   const [{ basket, user }, dispatch] = useStateValue();
 
-  user?console.log(user.email):console.log("ok")
+  user ? console.log(user.email) : console.log("ok");
 
   const logout = () => {
     if (user) {
@@ -38,35 +31,36 @@ const Example = (props) => {
 
   return (
     <div>
-      <Navbar color='dark' dark light expand='md'>
-        <Link to='/'>
-          <NavbarBrand color='black'>OSI Digital Store</NavbarBrand>
+      <Navbar className="nav"expand="md">
+        <Link to="/">
+          <NavbarBrand className="brandName" >Digital Game Store</NavbarBrand>
         </Link>
-        <Link to='/contact'>
-          <NavbarBrand color='black'>Profile</NavbarBrand>
-        </Link>
-        <div className='header__search'>
-          <input className='header__searchInput' />
-          <SearchIcon className='header__searchIcon' />
+        
+        <div className="header__search">
+          <div className="header__searchContainer">
+            <SearchIcon className="header__searchIcon" />
+            <input className="header__searchInput" placeholder="Search" />
+          </div>
         </div>
+        <Link className="info" to="/contact">Info</Link>
 
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className='ml-auto' navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
-              <Link to='/cart'>
-                <span className='text-white'>My Cart</span>
-                <FaShoppingCart style={{ color: "#61ff4e" }} className='mx-1' />
-                <span className='text-white'>{basket?.length}</span>
+              <Link to="/cart">
+                <span className="brandName">My Cart</span>
+                <FaShoppingCart style={{ color: "#61ff4e" }} className="mx-1" />
+                <span className="text-white">{basket?.length}</span>
               </Link>
-              <Link to={!user && "/login"}>
+              <Link className="brandName" to={!user && "/login"}>
                 <span onClick={logout}>
-                  <span className='text-white mx-5'>
-                    <span className='mx-1'>
+                  <span className="text-white mx-5">
+                    <span className="mx-1">
                       {user ? user.displayName + " Sign out " : "Sign In"}
                     </span>
                     <BsFillPersonFill
-                      className=''
+                      className=""
                       style={{ color: "#61ff4e" }}
                     />
                   </span>
@@ -80,9 +74,7 @@ const Example = (props) => {
   );
 };
 
-
 export default Example;
-
 
 // import React from 'react';
 // import { fade, makeStyles } from '@material-ui/core/styles';
@@ -296,4 +288,3 @@ export default Example;
 //     </div>
 //   );
 // }
-

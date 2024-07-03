@@ -8,7 +8,7 @@ function CartProduct({image,price,id,name,subtitle})
 
 {
   console.log(name)
-  const [{basket},dispatch]=useStateValue()
+  const [dispatch]=useStateValue()
 
   const remove=()=>{
     dispatch({
