@@ -14,6 +14,8 @@ import { FaPlaystation } from "react-icons/fa";
 
 import { FaUnity } from "react-icons/fa";
 
+import "./ProductDisp.css";
+
 function ProductDisp({ match }) {
   let history = useHistory();
   let w;
@@ -46,7 +48,7 @@ function ProductDisp({ match }) {
     });
 
   return (
-    <div style={{ background: "#13181f" }}>
+    <div className="Game-about" style={{ background: "#13181f" }}>
       
       {console.log(basket)}
       <div
@@ -116,7 +118,7 @@ function ProductDisp({ match }) {
           </Col>
         </Row>
       </Container>
-      <Container fluid>
+      <Container className="Game-Info" fluid>
         <Row>
           <Col lg={9}>
             <h1>GAME INFORMATION</h1>
