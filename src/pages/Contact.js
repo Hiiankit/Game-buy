@@ -18,11 +18,13 @@ function Profile() {
 
   useEffect(() => {
     if (user) {
+      console.log("User is logged in:", user);
       db.collection("users")
         .doc(user.uid)
         .get()
         .then((docRef) => {
           if (docRef.exists) {
+            console.log("Document data:", docRef.data());
             setProfileData(docRef.data());
           } else {
             console.log("No such document!");
@@ -32,9 +34,10 @@ function Profile() {
           console.error("Error getting document:", error);
         });
     } else {
-      // Retrieve data from localStorage if not logged in
+      console.log("User is not logged in. Checking localStorage...");
       const storedFormData = localStorage.getItem("formData");
       if (storedFormData) {
+        console.log("Data retrieved from localStorage:", JSON.parse(storedFormData));
         setProfileData(JSON.parse(storedFormData));
       }
     }

@@ -13,7 +13,6 @@ import { FaXbox } from "react-icons/fa";
 import { FaPlaystation } from "react-icons/fa";
 
 import { FaUnity } from "react-icons/fa";
-
 import "./ProductDisp.css";
 
 function ProductDisp({ match }) {
@@ -118,7 +117,7 @@ function ProductDisp({ match }) {
           </Col>
         </Row>
       </Container>
-      <Container className="Game-Info" fluid>
+      <Container fluid>
         <Row>
           <Col lg={9}>
             <h1>GAME INFORMATION</h1>
