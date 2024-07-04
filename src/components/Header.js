@@ -41,8 +41,9 @@ const Example = (props) => {
             <SearchIcon className="header__searchIcon" />
             <input className="header__searchInput" placeholder="Search" />
           </div>
+          <Link className="info" to="/contact">Info</Link>
         </div>
-        <Link className="info" to="/contact">Info</Link>
+        
 
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -50,7 +51,7 @@ const Example = (props) => {
             <NavItem>
               <Link to="/cart">
                 <span className="brandName">My Cart</span>
-                <FaShoppingCart style={{ color: "#61ff4e" }} className="mx-1" />
+                <FaShoppingCart style={{ color: "#61ff4e",  }} className="mx-1" />
                 <span className="text-white">{basket?.length}</span>
               </Link>
               <Link className="brandName" to={!user && "/login"}>

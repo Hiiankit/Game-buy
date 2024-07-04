@@ -3,3 +3,10 @@
   height: 100vh;
   color:black;
 }
+
+.buy{
+  font-weight: 500;
+  background: -webkit-linear-gradient(left, #546ff7, #e40b36);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

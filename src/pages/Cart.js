@@ -21,7 +21,7 @@ function Cart() {
           </div>
         ) : (
           <div>
-            <Link to='/'>Procced to buy</Link>
+            <Link className="Buy" to='/'>Procced to buy</Link>
             {basket.map((item, ind) => (
               <CartProduct
                 key={ind}

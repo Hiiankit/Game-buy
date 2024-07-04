@@ -6,7 +6,7 @@ import "./Products.css";
 
 function Products() {
   return (
-    <Container>
+    <Container className="main">
       <Row>
         {data.map((pro) => (
           <Col sm={12} md={6} lg={4}>

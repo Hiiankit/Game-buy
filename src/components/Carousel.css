@@ -1,8 +1,15 @@
-.carImg {
+/* .carImg {
   object-fit: contain;
 
   margin-top: -120px;
   height: 760px;
 
   width: 100%;
+} */
+.carousel-item img {
+  
+  max-width: 100%;
+  height: auto;
+  
 }
+

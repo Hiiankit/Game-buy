@@ -14,6 +14,7 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
+
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
@@ -26,15 +27,13 @@ function App() {
           user: authUser,
         });
       } else {
-        //user is logge out
+        //user is logged out
         dispatch({
           type: "SET_USER",
           user: null,
         });
       }
     });
-
-    console.log("ankit")
 
     return () => {
       unsubscribe();
@@ -44,24 +43,16 @@ function App() {
   return (
     <div className='App'>
       <Router>
+        <Header />
         <Switch>
-          <Route exact path='/'>
-            <Header />
-            <Home />
-          </Route>
-          <Route exact path='/cart'>
-            <Header />
-            <Cart />
-          </Route>
-          <Route exact path='/product/:id' component={ProductDisp} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/cart' component={Cart} />
           <Route exact path='/login' component={Login} />
+          <Route exact path='/product/:id' component={ProductDisp} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/checkout' component={Checkout} />
-          <Route exact path='/discover'>
-            <Header />
-            <Discover />
-          </Route>
+          <Route exact path='/discover' component={Discover} />
           <Route exact path='*' component={NotFound} />
           <Route exact path='/nf' component={NotFound} />
         </Switch>

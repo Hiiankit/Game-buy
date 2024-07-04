@@ -1,66 +1,33 @@
-
-
 import React, { useState } from "react";
-
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-
-
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import { auth } from "../firebase";
+import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Typography, Container } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import { auth } from "../firebase";
+import "./Login.css";
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
-
-export default function SignIn() {
+const SignIn = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const classes = useStyles();
-
   const login = (e) => {
     e.preventDefault();
-    //login logic
     auth
       .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        //logged in ,redirect to homepage
+      .then(() => {
         history.push("/");
       })
-      .catch((e) => alert(e.message));
+      .catch((error) => alert(error.message));
   };
 
   return (
-    <div className='login'>
-      <Container component='main' maxWidth='xs'>
+    <div className='login-container'>
+      <Container component='main'>
         <CssBaseline />
-        <div className={classes.paper}>
-          <Typography component='h1' variant='h5'>
+        <div className='paper'>
+          <h1 className="heading">
             Sign in
-          </Typography>
-          <form className={classes.form} noValidate>
+          </h1>
+          <form className='form' noValidate>
             <TextField
               variant='outlined'
               margin='normal'
@@ -88,7 +55,7 @@ export default function SignIn() {
               onChange={(event) => setPassword(event.target.value)}
             />
             <FormControlLabel
-              control={<Checkbox value='remember' color='warning' />}
+              control={<Checkbox value='remember' color='primary' />}
               label='Remember me'
             />
             <Button
@@ -96,7 +63,7 @@ export default function SignIn() {
               fullWidth
               variant='contained'
               color='primary'
-              className={classes.submit}
+              className='submit'
               onClick={login}
             >
               Sign In
@@ -113,4 +80,6 @@ export default function SignIn() {
       </Container>
     </div>
   );
-}
+};
+
+export default SignIn;

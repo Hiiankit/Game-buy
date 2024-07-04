@@ -29,7 +29,7 @@ const data = [
   {
     id: "1",
     image:
-      "https://lh3.googleusercontent.com/uYK6qVVc1NUqe6uMAjMsgEpaGYBebPJTFv3pHR5ccDMm5yf1BPDi72w5PzvJ5tTH2pvWAEfNITlSDyxO8IpxmaQ4dw",
+      "https://image.api.playstation.com/vulcan/ap/rnd/202303/2318/ca9f73eaff9ea919bd155d160796afacd98f8e5954c80a4b.png",
     name: "Marvel Avengers",
     price: 187,
     subtitle: "Van Heusen Athleisure Men's Solid Regular Fit T-Shirt",

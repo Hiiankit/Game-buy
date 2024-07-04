@@ -33,7 +33,8 @@
 }
 
 .info{
-  position: relative;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .header__searchInput {
@@ -60,8 +61,8 @@
 }
 
 
-.brand{
-  
+.brandName{
+  padding-left: 2px
 }
 *{
   background-color: ;
