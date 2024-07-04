@@ -12,7 +12,7 @@ function Cart() {
     <div className='cart'>
       <div className='cart__left'>
         {basket?.length === 0 ? (
-          <div>
+          <div className="empty">
             <h2>Your cart is empty</h2>
             <p>
               You have no items in your cart head over to our products and

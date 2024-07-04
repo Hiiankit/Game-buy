@@ -12,7 +12,7 @@ import { auth, db } from "../firebase";
 import { useHistory } from "react-router-dom";
 import "./Register.css";
 
-export default function SignUp() {
+const SignUp = () => {
   const history = useHistory();
   const [formData, setFormData] = useState({
     username: "",
@@ -34,7 +34,12 @@ export default function SignUp() {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
+        // Store data in localStorage
+        localStorage.setItem("formData", JSON.stringify(formData));
+
+        // Store data in Firestore
         db.collection('users').doc(auth.user.uid).set(formData);
+
         auth.user.updateProfile({ displayName: username });
         history.push("/");
       })
@@ -176,3 +181,5 @@ export default function SignUp() {
     </Container>
   );
 }
+
+export default SignUp;

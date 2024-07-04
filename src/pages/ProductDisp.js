@@ -47,7 +47,7 @@ function ProductDisp({ match }) {
 
   return (
     <div style={{ background: "#13181f" }}>
-      <Header />
+      
       {console.log(basket)}
       <div
         className='banner'
